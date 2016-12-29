@@ -1,0 +1,6 @@
+deploy
+deploy/*
+.DS_Store
+/*.jpg
+square/*.jpg
+watermark/*.jpg
