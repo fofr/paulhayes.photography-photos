@@ -14,7 +14,7 @@ def watermark_image(image, output_path)
     image_height = `convert #{image} -ping -format \"%h\" info:`
 
     if (image_height > image_width)
-      maximum_watermark_width = Integer(Integer(image_width) * 0.4) # 20% of image width
+      maximum_watermark_width = Integer(Integer(image_width) * 0.4) # 40% of image width
     else
       maximum_watermark_width = Integer(Integer(image_width) * 0.2) # 20% of image width
     end
@@ -30,7 +30,7 @@ images.each do |image|
   watermark_image("square/#{image}", "watermarked/square/#{filename}")
 
   sizes.each do |size|
-    watermark_image(image, "watermarked/#{size}/#{filename}")
+    watermark_image("#{size}/#{image}", "watermarked/#{size}/#{filename}")
   end
 end
 
